@@ -13,8 +13,8 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
   
-  
-  task: AzureWebApp@1
+
+- task: AzureWebApp@1
   inputs:
     azureSubscription: 'Azure Pass - Sponsorship(8921afe2-c36e-462e-9106-176a887e8cb0)'
     appType: 'webApp'
