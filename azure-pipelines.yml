@@ -12,6 +12,18 @@ pool:
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
+  
+  
+  task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Azure Pass - Sponsorship(8921afe2-c36e-462e-9106-176a887e8cb0)'
+    appType: 'webApp'
+    appName: 'LucaApp'
+    deployToSlotOrASE: true
+    resourceGroupName: 'RgStage'
+    slotName: 'production'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    deploymentMethod: 'auto'
 - task: PublishPipelineArtifact@1
   inputs:
     targetPath: '$(Pipeline.Workspace)'
@@ -25,13 +37,4 @@ steps:
   
 
 
-- task: AzureWebApp@1
-  inputs:
-    azureSubscription: 'Azure Pass - Sponsorship(8921afe2-c36e-462e-9106-176a887e8cb0)'
-    appType: 'webApp'
-    appName: 'LucaApp'
-    deployToSlotOrASE: true
-    resourceGroupName: 'RgStage'
-    slotName: 'production'
-    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
-    deploymentMethod: 'auto'
+- 
