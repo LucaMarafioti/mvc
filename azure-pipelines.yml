@@ -31,7 +31,7 @@ steps:
     appType: 'webApp'
     appName: 'LucaApp'
     deployToSlotOrASE: true
-    resourceGroupName: 'Pipeline'
+    resourceGroupName: 'RgStage'
     slotName: 'production'
     package: '$(System.DefaultWorkingDirectory)/**/*.zip'
     deploymentMethod: 'auto'
